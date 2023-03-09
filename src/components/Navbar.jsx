@@ -7,7 +7,7 @@ const Navbar = () => {
       <div className="logo">
         <Link
           to={"/"}
-          className="text-xl font-semibold hover:text-violet-500 duration-300"
+          className="text-xl font-semibold text-violet-500 hover:text-violet-600 duration-300"
         >
           Envelop
         </Link>
