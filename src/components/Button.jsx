@@ -11,4 +11,4 @@ const Button = ({ text, submit }) => {
   );
 };
 
-export default Button;
+export default React.memo(Button);

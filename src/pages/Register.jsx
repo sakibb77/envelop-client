@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import Button from "../components/Button";
+import ErrorMessage from "../components/ErrorMessage";
 import FormControl from "../components/FormControl";
 import SectionTitle from "../components/SectionTitle";
 import { useSignup } from "../hooks/useSignup";
@@ -65,16 +66,12 @@ const Register = () => {
           setFromFields={setFromFields}
         />
 
-        <Button text={"register"} submit />
+        <Button text={isLoading ? "Registering... " : "Register"} submit />
 
-        {error && (
-          <p className="p-4 rounded bg-rose-100 text-rose-500 border border-rose-400">
-            {error}
-          </p>
-        )}
+        {error && <ErrorMessage error={error} />}
       </form>
     </div>
   );
 };
 
-export default Register;
+export default React.memo(Register);
